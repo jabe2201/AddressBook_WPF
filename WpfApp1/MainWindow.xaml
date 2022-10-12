@@ -17,6 +17,30 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <StackPanel>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                    <TextBlock/>
+                    <TextBox/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Button x:Name="bt_Add" Content="ADD" Padding="5" Margin="10"/>
+            </Grid>
+            
         </Grid>
 
         <Grid Grid.Column="1">
@@ -27,6 +51,9 @@
 
             <TextBlock Grid.Row="0"
                        Text="Kontakter"
+                       FontSize="15"
+                       FontWeight="Bold"
+                       Foreground="#6b6e6e"
                        VerticalAlignment="Bottom"
                        Margin="5 0 0 10"
             />
