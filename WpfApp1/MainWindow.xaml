@@ -28,7 +28,7 @@
                                VerticalAlignment="Bottom"
                                />
                     <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" />
-                    <TextBox Style="{StaticResource TextBox}">
+                    <TextBox x:Name="tb_FirstName" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -36,7 +36,7 @@
                         </TextBox.Resources>
                     </TextBox>
                     <TextBlock Text="Efternamn" Style="{StaticResource TextBlock}"/>
-                    <TextBox Style="{StaticResource TextBox}">
+                    <TextBox x:Name="tb_LastName" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -44,7 +44,7 @@
                         </TextBox.Resources>
                     </TextBox>
                     <TextBlock Text="Mail" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}">
+                    <TextBox  x:Name="tb_Email" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -52,7 +52,7 @@
                         </TextBox.Resources>
                     </TextBox>
                     <TextBlock Text="Telefonnummer" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}">
+                    <TextBox  x:Name="tb_PhoneNumber" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -60,7 +60,7 @@
                         </TextBox.Resources>
                     </TextBox>
                     <TextBlock Text="Adress" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}">
+                    <TextBox  x:Name="tb_StreetAddress" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -68,7 +68,7 @@
                         </TextBox.Resources>
                     </TextBox>
                     <TextBlock Text="Postnummer" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}">
+                    <TextBox  x:Name="tb_PostalCode" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -76,7 +76,7 @@
                         </TextBox.Resources>
                     </TextBox>
                     <TextBlock Text="Ort" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}">
+                    <TextBox  x:Name="tb_City" Style="{StaticResource TextBox}">
                         <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
@@ -87,7 +87,7 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <Button x:Name="bt_Add" Content="ADD" Padding="5" Margin="10"/>
+                <Button x:Name="bt_Add" Click="bt_Add_Click" Content="ADD" Padding="5" Margin="10"/>
             </Grid>
             
         </Grid>
