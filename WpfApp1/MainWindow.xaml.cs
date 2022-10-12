@@ -32,7 +32,32 @@ namespace WpfApp1
 
         private void bt_Add_Click(object sender, RoutedEventArgs e)
         {
-            var contact = _contacts.Where(x => x.EmailAddress == tb_)
+            var contact = _contacts.Where(x => x.EmailAddress == tb_Email.Text).ToList();
+
+            if (!contact.Any())
+            {
+                if(tb_Email.Text == "")
+                {
+                    MessageBox.Show("Vänligen fyll i en mailadress");
+                }
+                else
+                {
+                    _contacts.Add(new Contact
+                    {
+                        FirstName = tb_FirstName.Text,
+                        LastName = tb_LastName.Text,
+                        EmailAddress = tb_Email.Text,
+                        PhoneNumber = tb_PhoneNumber.Text,
+                        StreetAddress = tb_StreetAddress.Text,
+                        PostalCode = tb_PostalCode.Text,
+                        City = tb_City.Text,
+                    }); 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vänligen fyll i kontakuppgifter");
+            }
         }
     }
 }
