@@ -20,20 +20,69 @@
 
             <Grid Grid.Row="0">
                 <StackPanel>
-                    <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" Margin="2 100 0 5"/>
-                    <TextBox Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="FYLL I KONTAKTUPPGIFTER" 
+                               Margin="2 68 0 5"
+                               FontSize="15"
+                               FontWeight="Bold"
+                               Foreground="#6b6e6e"
+                               VerticalAlignment="Bottom"
+                               />
+                    <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" />
+                    <TextBox Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                     <TextBlock Text="Efternamn" Style="{StaticResource TextBlock}"/>
-                    <TextBox Style="{StaticResource TextBox}"/>
+                    <TextBox Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                     <TextBlock Text="Mail" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBox  Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                     <TextBlock Text="Telefonnummer" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBox  Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                     <TextBlock Text="Adress" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBox  Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                     <TextBlock Text="Postnummer" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBox  Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                     <TextBlock Text="Ort" Style="{StaticResource TextBlock}"/>
-                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBox  Style="{StaticResource TextBox}">
+                        <TextBox.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="6"/>
+                            </Style>
+                        </TextBox.Resources>
+                    </TextBox>
                 </StackPanel>
             </Grid>
 
@@ -50,7 +99,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0"
-                       Text="Kontakter"
+                       Text="KONTAKTER"
                        FontSize="15"
                        FontWeight="Bold"
                        Foreground="#6b6e6e"
