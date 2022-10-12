@@ -20,19 +20,19 @@
 
             <Grid Grid.Row="0">
                 <StackPanel>
-                    <TextBlock/>
+                    <TextBlock Text="Förnamn" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
-                    <TextBlock/>
+                    <TextBlock Text="Efternamn" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
-                    <TextBlock/>
+                    <TextBlock Text="Mail" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
-                    <TextBlock/>
+                    <TextBlock Text="Telefonnummer" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
-                    <TextBlock/>
+                    <TextBlock Text="Adress" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
-                    <TextBlock/>
+                    <TextBlock Text="Postnummer" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
-                    <TextBlock/>
+                    <TextBlock Text="Ort" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
                     <TextBox/>
                 </StackPanel>
             </Grid>
