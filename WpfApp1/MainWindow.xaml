@@ -67,7 +67,7 @@
                 </Grid>
                 <ListView.Template>
                     <ControlTemplate>
-                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" />
+                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" Background="White"/>
                     </ControlTemplate>
                 </ListView.Template>
 
