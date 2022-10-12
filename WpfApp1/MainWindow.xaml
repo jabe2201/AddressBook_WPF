@@ -20,20 +20,20 @@
 
             <Grid Grid.Row="0">
                 <StackPanel>
-                    <TextBlock Text="Förnamn" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
-                    <TextBlock Text="Efternamn" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
-                    <TextBlock Text="Mail" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
-                    <TextBlock Text="Telefonnummer" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
-                    <TextBlock Text="Adress" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
-                    <TextBlock Text="Postnummer" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
-                    <TextBlock Text="Ort" FontSize="12" FontWeight="Bold" Foreground="#6b6e6e" Background="#edeff0"/>
-                    <TextBox/>
+                    <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" Margin="2 100 0 5"/>
+                    <TextBox Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="Efternamn" Style="{StaticResource TextBlock}"/>
+                    <TextBox Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="Mail" Style="{StaticResource TextBlock}"/>
+                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="Telefonnummer" Style="{StaticResource TextBlock}"/>
+                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="Adress" Style="{StaticResource TextBlock}"/>
+                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="Postnummer" Style="{StaticResource TextBlock}"/>
+                    <TextBox  Style="{StaticResource TextBox}"/>
+                    <TextBlock Text="Ort" Style="{StaticResource TextBlock}"/>
+                    <TextBox  Style="{StaticResource TextBox}"/>
                 </StackPanel>
             </Grid>
 
@@ -67,7 +67,7 @@
                 </Grid>
                 <ListView.Template>
                     <ControlTemplate>
-                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" Background="White"/>
+                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" Background="#f5f7f7"/>
                     </ControlTemplate>
                 </ListView.Template>
 
