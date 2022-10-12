@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="ADDRESSBOOK" Height="600" Width="800">
+    <Grid Background="#edeff0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="Kontakter"
+                       VerticalAlignment="Bottom"
+                       Margin="5 0 0 10"
+            />
+
+            <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                <ListView.Template>
+                    <ControlTemplate>
+                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" />
+                    </ControlTemplate>
+                </ListView.Template>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Grid.Column="0" Text="Hej"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                
+            </ListView>
+            
+            
+        </Grid>
+        
+        
+        
     </Grid>
 </Window>
