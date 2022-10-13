@@ -94,8 +94,8 @@
                 </Button>
                 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" Style="{StaticResource Button_Edit}"/>
-                    <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="&#xE72C;" Style="{StaticResource Button_Edit}"/>
+                    <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" Foreground="Red" Style="{StaticResource Button_Edit}"/>
+                    <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="&#xE72C;" Foreground="Green" Style="{StaticResource Button_Edit}"/>
                     <Button x:Name="bt_Return" Click="bt_Return_Click" Content="&#xE72B;" Style="{StaticResource Button_Edit}"/>
                 </StackPanel>
             </Grid>
