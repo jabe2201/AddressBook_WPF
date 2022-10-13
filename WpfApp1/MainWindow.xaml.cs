@@ -111,12 +111,16 @@ namespace WpfApp1
 
                 case MenuState.add:
                     bt_Add.Visibility = Visibility.Visible;
-                    bt_Edit.Visibility = Visibility.Hidden;
+                    bt_Edit.Visibility = Visibility.Collapsed;
+                    bt_Delete.Visibility = Visibility.Collapsed;
+                    bt_Return.Visibility = Visibility.Collapsed;
                     break;
 
                 case MenuState.edit:
-                    bt_Add.Visibility = Visibility.Hidden;
+                    bt_Add.Visibility = Visibility.Collapsed;
                     bt_Edit.Visibility = Visibility.Visible;
+                    bt_Delete.Visibility = Visibility.Visible;
+                    bt_Return.Visibility = Visibility.Visible;
                     break;
             }
         }
@@ -162,7 +166,8 @@ namespace WpfApp1
 
         private void bt_Return_Click(object sender, RoutedEventArgs e)
         {
-
+            ClearFields();
+            MenuPresenter(MenuState.add);
         }
     }
 }
