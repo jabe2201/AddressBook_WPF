@@ -3,7 +3,7 @@
     <Style x:Key="Button_Edit" TargetType="Button">
         <Setter Property="FontFamily" Value="Segoe MDL2 Assets"/>
         <Setter Property="Padding" Value="20 10 20 10"/>
-        <Setter Property="Margin" Value="10"/>
+        <Setter Property="Margin" Value="10 10 5 10"/>
         <Setter Property="FontSize" Value="20"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="Transparent"/>

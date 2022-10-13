@@ -4,6 +4,6 @@
     <Style x:Key="HeaderTextBlock" TargetType="TextBlock">
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontWeight" Value="DemiBold"/>
-        <Setter Property="Foreground" Value="#6b6e6e"/>
+        <Setter Property="Foreground" Value="#575a5c"/>
     </Style>
 </ResourceDictionary>
