@@ -87,6 +87,10 @@
             <Grid Grid.Row="1">
                 <Button x:Name="bt_Add" Click="bt_Add_Click" Content="ADD" Padding="5" Margin="10"/>
             </Grid>
+
+            <Grid Grid.Row="1">
+                <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="EDIT" Padding="5" Margin="10"/>
+            </Grid>
             
         </Grid>
 

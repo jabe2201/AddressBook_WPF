@@ -1,23 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using WpfApp1.Models;
 
 namespace WpfApp1
 {
-    
+
     public partial class MainWindow : Window
     {
         private ObservableCollection<Contact> _contacts;
@@ -34,6 +24,7 @@ namespace WpfApp1
         {
             InitializeComponent();
             
+            MenuPresenter(MenuState.add);
             _contacts = new ObservableCollection<Contact>();
             RefreshList();
         }
@@ -89,6 +80,7 @@ namespace WpfApp1
 
         private void lv_Contacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            MenuPresenter(MenuState.edit);
             var contact = (Contact)lv_Contacts.SelectedItems[0]!;
 
             tb_FirstName.Text = contact.FirstName;
@@ -98,6 +90,30 @@ namespace WpfApp1
             tb_StreetAddress.Text = contact.StreetAddress;
             tb_PostalCode.Text = contact.PostalCode;
             tb_City.Text = contact.City;
+        }
+
+        private void MenuPresenter(MenuState state)
+        {
+            switch (state)
+            {
+                case MenuState.startup:
+                    break;
+
+                case MenuState.add:
+                    bt_Add.Visibility = Visibility.Visible;
+                    bt_Edit.Visibility = Visibility.Hidden;
+                    break;
+
+                case MenuState.edit:
+                    bt_Add.Visibility = Visibility.Hidden;
+                    bt_Edit.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
+
+        private void bt_Edit_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
