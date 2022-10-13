@@ -96,7 +96,6 @@
                 
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-
                     <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" FontFamily="Segoe MDL2 Assets" FontSize="20" Padding="20 10 20 10" Margin="10">
                         <Button.Resources>
                             <Style TargetType="Border">
@@ -120,14 +119,8 @@
                             </Style>
                         </Button.Resources>
                     </Button>
-
-
                 </StackPanel>
-                
             </Grid>
-
-            
-            
         </Grid>
 
         <Grid Grid.Column="1">
@@ -143,7 +136,7 @@
                        VerticalAlignment="Bottom"
             />
 
-            <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5" SelectionChanged="lv_Contacts_SelectionChanged">
+            <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5" SelectionChanged="lv_Contacts_SelectionChanged" Style="{StaticResource ListView}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
@@ -152,15 +145,6 @@
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-                
-                <ListView.Template>
-                    <ControlTemplate TargetType="ListView">
-                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" Background="#f5f7f7">
-                            <ItemsPresenter></ItemsPresenter>
-                        </Border>
-                    </ControlTemplate>
-                </ListView.Template>
-                
             </ListView>
             
 

@@ -128,6 +128,7 @@ namespace WpfApp1
         private void bt_Edit_Click(object sender, RoutedEventArgs e)
         {
             var contact = (Contact)lv_Contacts.SelectedItems[0]!;
+            
 
             var index = _contacts.IndexOf(contact);
 
@@ -161,7 +162,12 @@ namespace WpfApp1
 
         private void bt_Delete_Click(object sender, RoutedEventArgs e)
         {
+            var contact = (Contact)lv_Contacts.SelectedItems[0]!;
 
+            _contacts.Remove(contact);
+            Save(_filePath, JsonConvert.SerializeObject(_contacts));
+            RefreshList();
+            ClearFields();
         }
 
         private void bt_Return_Click(object sender, RoutedEventArgs e)
