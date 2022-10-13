@@ -6,6 +6,6 @@
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="#6b6e6e"/>
         <Setter Property="Background" Value="#edeff0"/>
-        <Setter Property="Margin" Value="2 0 0 5"/>
+        <Setter Property="Margin" Value="5 0 0 5"/>
     </Style>
 </ResourceDictionary>

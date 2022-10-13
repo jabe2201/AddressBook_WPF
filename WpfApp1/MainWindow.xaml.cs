@@ -113,6 +113,11 @@ namespace WpfApp1
 
         private void bt_Edit_Click(object sender, RoutedEventArgs e)
         {
+            var button = sender as Button;
+            var contact = (Contact)button!.DataContext;
+
+            var index = _contacts.IndexOf(contact);
+
 
         }
     }
