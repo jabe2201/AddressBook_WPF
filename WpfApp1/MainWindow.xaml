@@ -85,7 +85,7 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <Button x:Name="bt_Add" Click="bt_Add_Click" Content="ADD" Padding="5" Margin="10" HorizontalAlignment="Stretch">
+                <Button x:Name="bt_Add" Click="bt_Add_Click" Content="LÄGG TILL" Padding="5" Margin="10" HorizontalAlignment="Stretch">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="8"/>
