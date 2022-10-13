@@ -28,8 +28,8 @@ namespace WpfApp1
         {
             InitializeComponent();
             
-            lv_Contacts.ItemsSource = _contacts;
             _contacts = new ObservableCollection<Contact>();
+            RefreshList();
         }
 
         private void bt_Add_Click(object sender, RoutedEventArgs e)
@@ -61,8 +61,24 @@ namespace WpfApp1
                 MessageBox.Show("Vänligen fyll i kontakuppgifter");
             }
 
-            lv_Contacts.ItemsSource = _contacts;
+            RefreshList();
+            ClearFields();
+        }
 
+        private void ClearFields()
+        {
+            tb_FirstName.Text = "";
+            tb_LastName.Text = "";
+            tb_Email.Text = "";
+            tb_PhoneNumber.Text = "";
+            tb_StreetAddress.Text = "";
+            tb_PostalCode.Text = "";
+            tb_City.Text = "";
+        }
+
+        private void RefreshList()
+        {
+            lv_Contacts.ItemsSource = _contacts.OrderBy(x => x.FirstName);
         }
     }
 }
