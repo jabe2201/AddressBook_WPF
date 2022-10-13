@@ -154,5 +154,15 @@ namespace WpfApp1
             using var sw = new StreamWriter(filePath);
             sw.WriteLineAsync(content);
         }
+
+        private void bt_Delete_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void bt_Return_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

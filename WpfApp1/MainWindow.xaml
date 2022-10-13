@@ -85,24 +85,48 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <Button x:Name="bt_Add" Click="bt_Add_Click" Content="ADD" Padding="5" Margin="10">
+                <Button Visibility="Collapsed" x:Name="bt_Add" Click="bt_Add_Click" Content="ADD" Padding="5" Margin="10" HorizontalAlignment="Stretch">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="8"/>
                         </Style>
                     </Button.Resources>
                 </Button>
+
+                
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                    <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" FontFamily="Segoe MDL2 Assets" FontSize="20" Padding="20 10 20 10" Margin="10">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="&#xE72C;" FontFamily="Segoe MDL2 Assets" Padding="20 10 20 10" Margin="10" BorderThickness="2" FontSize="20">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+                    <Button x:Name="bt_Return" Click="bt_Return_Click" Content="&#xE72B;" FontFamily="Segoe MDL2 Assets" FontSize="20" Padding="20 10 20 10" Margin="10">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+
+
+                </StackPanel>
+                
             </Grid>
 
-            <Grid Grid.Row="1">
-                <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="EDIT" Padding="5" Margin="10" BorderThickness="2">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-            </Grid>
+            
             
         </Grid>
 
