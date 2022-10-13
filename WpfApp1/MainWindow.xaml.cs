@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,9 +25,15 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            
+            try
+            {
+                _contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(Read(_filePath));
+            }
+            catch
+            {
+                _contacts = new ObservableCollection<Contact>();
+            }
             MenuPresenter(MenuState.add);
-            _contacts = new ObservableCollection<Contact>();
             RefreshList();
         }
 
@@ -60,6 +68,7 @@ namespace WpfApp1
 
             RefreshList();
             ClearFields();
+            Save(_filePath, JsonConvert.SerializeObject(_contacts));
         }
 
         private void ClearFields()
@@ -113,12 +122,36 @@ namespace WpfApp1
 
         private void bt_Edit_Click(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-            var contact = (Contact)button!.DataContext;
+            var contact = (Contact)lv_Contacts.SelectedItems[0]!;
 
             var index = _contacts.IndexOf(contact);
 
+            _contacts[index].FirstName = tb_FirstName.Text;
+            _contacts[index].LastName = tb_LastName.Text;
+            _contacts[index].EmailAddress = tb_Email.Text;
+            _contacts[index].PhoneNumber = tb_PhoneNumber.Text;
+            _contacts[index].StreetAddress = tb_StreetAddress.Text;
+            _contacts[index].PostalCode = tb_PostalCode.Text;
+            _contacts[index].City = tb_City.Text;
+            RefreshList();
+            ClearFields();
+            MenuPresenter(MenuState.add);
+            Save(_filePath, JsonConvert.SerializeObject(_contacts));
 
+        }
+        private string Read(string filePath)
+        {
+            using var sr = new StreamReader(filePath);
+            return sr.ReadToEnd();
+        }
+
+        private void Save(string filePath, string content)
+        {
+            var text = Read(filePath);
+            text += content;
+
+            using var sw = new StreamWriter(filePath);
+            sw.WriteLineAsync(content);
         }
     }
 }

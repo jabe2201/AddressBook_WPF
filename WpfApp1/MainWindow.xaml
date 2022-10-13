@@ -95,7 +95,7 @@
             </Grid>
 
             <Grid Grid.Row="1">
-                <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="EDIT" Padding="5" Margin="10">
+                <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="EDIT" Padding="5" Margin="10" BorderThickness="2">
                     <Button.Resources>
                         <Style TargetType="Border">
                             <Setter Property="CornerRadius" Value="8"/>
