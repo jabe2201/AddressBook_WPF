@@ -23,6 +23,12 @@ namespace WpfApp1
         private ObservableCollection<Contact> _contacts;
         private string _filePath= $@"C:\Users\jacob\Documents\Nackademin\ProgrammeringC#\ovningar\Uppgift2_TEST\addressbook.json";
 
+        enum MenuState
+        {
+            startup,
+            add,
+            edit
+        }
 
         public MainWindow()
         {
@@ -79,6 +85,19 @@ namespace WpfApp1
         private void RefreshList()
         {
             lv_Contacts.ItemsSource = _contacts.OrderBy(x => x.FirstName);
+        }
+
+        private void lv_Contacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var contact = (Contact)lv_Contacts.SelectedItems[0]!;
+
+            tb_FirstName.Text = contact.FirstName;
+            tb_LastName.Text = contact.LastName;
+            tb_Email.Text = contact.EmailAddress;
+            tb_PhoneNumber.Text = contact.PhoneNumber;
+            tb_StreetAddress.Text = contact.StreetAddress;
+            tb_PostalCode.Text = contact.PostalCode;
+            tb_City.Text = contact.City;
         }
     }
 }
