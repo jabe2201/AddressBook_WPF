@@ -27,14 +27,16 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+            
             lv_Contacts.ItemsSource = _contacts;
+            _contacts = new ObservableCollection<Contact>();
         }
 
         private void bt_Add_Click(object sender, RoutedEventArgs e)
         {
-            var contact = _contacts.Where(x => x.EmailAddress == tb_Email.Text).ToList();
+            var _contact = _contacts.Where(x => x.EmailAddress == tb_Email.Text).ToList();
 
-            if (!contact.Any())
+            if (_contact.Count == 0)
             {
                 if(tb_Email.Text == "")
                 {
@@ -51,13 +53,16 @@ namespace WpfApp1
                         StreetAddress = tb_StreetAddress.Text,
                         PostalCode = tb_PostalCode.Text,
                         City = tb_City.Text,
-                    }); 
+                    });
                 }
             }
             else
             {
                 MessageBox.Show("Vänligen fyll i kontakuppgifter");
             }
+
+            lv_Contacts.ItemsSource = _contacts;
+
         }
     }
 }

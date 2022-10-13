@@ -21,15 +21,13 @@
             <Grid Grid.Row="0">
                 <StackPanel>
                     <TextBlock Text="FYLL I KONTAKTUPPGIFTER" 
+                               Style="{StaticResource HeaderTextBlock}"
                                Margin="2 68 0 5"
-                               FontSize="15"
-                               FontWeight="Bold"
-                               Foreground="#6b6e6e"
-                               VerticalAlignment="Bottom"
                                />
+                    
                     <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" />
                     <TextBox x:Name="tb_FirstName" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
+                    <TextBox.Resources>
                             <Style TargetType="Border">
                                 <Setter Property="CornerRadius" Value="6"/>
                             </Style>
@@ -100,35 +98,32 @@
 
             <TextBlock Grid.Row="0"
                        Text="KONTAKTER"
-                       FontSize="15"
-                       FontWeight="Bold"
-                       Foreground="#6b6e6e"
-                       VerticalAlignment="Bottom"
+                       Style="{StaticResource HeaderTextBlock}"
                        Margin="5 0 0 10"
+                       VerticalAlignment="Bottom"
             />
 
             <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5">
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="auto"/>
-                    </Grid.ColumnDefinitions>
-                </Grid>
-                <ListView.Template>
-                    <ControlTemplate>
-                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" Background="#f5f7f7"/>
-                    </ControlTemplate>
-                </ListView.Template>
-
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextBlock Grid.Column="0" Text="Hej"/>
+                        <StackPanel>
+                            <TextBlock Text="{Binding FullName}" FontSize="12" FontWeight="Light"/>
+                            <TextBlock Text="{Binding EmailAddress}" FontSize="9" FontWeight="Light"/>
+                        </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 
+                <ListView.Template>
+                    <ControlTemplate TargetType="ListView">
+                        <Border BorderThickness="2" BorderBrush="#b4b7b8" CornerRadius="6" Background="#f5f7f7">
+                            <ItemsPresenter></ItemsPresenter>
+                        </Border>
+                    </ControlTemplate>
+                </ListView.Template>
+                
             </ListView>
             
-            
+
         </Grid>
         
         
