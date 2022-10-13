@@ -13,7 +13,7 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private ObservableCollection<Contact> _contacts;
-        private string _filePath= $@"C:\Users\jacob\Documents\Nackademin\ProgrammeringC#\ovningar\Uppgift2_TEST\addressbook.json";
+        private string _filePath= $@"C:\Users\jacob\Documents\Nackademin\ProgrammeringC#\ovningar\addressbook.json";
 
         enum MenuState
         {
@@ -31,6 +31,7 @@ namespace WpfApp1
             }
             catch
             {
+                using (File.Create(_filePath))
                 _contacts = new ObservableCollection<Contact>();
             }
             MenuPresenter(MenuState.add);
