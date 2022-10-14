@@ -86,13 +86,7 @@
                 </Grid>
 
                 <Grid Grid.Row="1">
-                    <Button x:Name="bt_Add" Click="bt_Add_Click" Content="LÄGG TILL" FontWeight="DemiBold"  Padding="5" Margin="5 10 " HorizontalAlignment="Stretch">
-                        <Button.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="8"/>
-                            </Style>
-                        </Button.Resources>
-                    </Button>
+                    <Button x:Name="bt_Add" Click="bt_Add_Click" Style="{StaticResource Button_Edit}" Content="&#xE710;"/>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" Foreground="Red" Style="{StaticResource Button_Edit}"/>
@@ -134,9 +128,9 @@
             </Grid.RowDefinitions>
 
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-                <TextBlock Height="auto" Text="VÄNLIGEN FYLL I SÖKVÄG" Margin="0 200 0 3" Padding="3" HorizontalAlignment="Center"/>
+                <TextBlock Height="auto" Text="VÄNLIGEN ANGE EN SÖKVÄG" Margin="0 200 0 3" Padding="3" HorizontalAlignment="Center"/>
                 <TextBox x:Name="tb_filePath" Height="auto" Padding="5" Margin="0 0 0 5" Width="300"/>
-                <Button x:Name="bt_AddFilePath" Click="bt_AddFilePath_Click" Height="auto" Content="&#xE73E;" FontFamily="Segoe MDL2 Assets" FontSize="20" Padding="5" Width="100" HorizontalAlignment="Right"/>
+                <Button x:Name="bt_AddFilePath" Click="bt_AddFilePath_Click" Style="{StaticResource Button_Edit}" Content="&#xE73E;" HorizontalAlignment="Right"/>
             </StackPanel>
         </Grid>
 
