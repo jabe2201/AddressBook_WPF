@@ -3,6 +3,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 using WpfApp1.Models;
@@ -13,7 +14,8 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private ObservableCollection<Contact> _contacts;
-        private string _filePath= $@"C:\Users\jacob\Documents\Nackademin\ProgrammeringC#\ovningar\addressbook.json";
+        private string _filePath ="";
+        private bool _isDeleted;
 
         enum MenuState
         {
@@ -25,17 +27,8 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
-            try
-            {
-                _contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(Read(_filePath));
-            }
-            catch
-            {
-                using (File.Create(_filePath))
-                _contacts = new ObservableCollection<Contact>();
-            }
-            MenuPresenter(MenuState.add);
-            RefreshList();
+            MenuPresenter(MenuState.startup);
+
         }
 
         private void bt_Add_Click(object sender, RoutedEventArgs e)
@@ -90,23 +83,34 @@ namespace WpfApp1
 
         private void lv_Contacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MenuPresenter(MenuState.edit);
-            var contact = (Contact)lv_Contacts.SelectedItems[0]!;
+            if (_isDeleted)
+            {
+                MenuPresenter(MenuState.add);
+            }
+            else
+            {
+                MenuPresenter(MenuState.edit);
+                var contact = (Contact)lv_Contacts.SelectedItems[0]!;
 
-            tb_FirstName.Text = contact.FirstName;
-            tb_LastName.Text = contact.LastName;
-            tb_Email.Text = contact.EmailAddress;
-            tb_PhoneNumber.Text = contact.PhoneNumber;
-            tb_StreetAddress.Text = contact.StreetAddress;
-            tb_PostalCode.Text = contact.PostalCode;
-            tb_City.Text = contact.City;
+                tb_FirstName.Text = contact.FirstName;
+                tb_LastName.Text = contact.LastName;
+                tb_Email.Text = contact.EmailAddress;
+                tb_PhoneNumber.Text = contact.PhoneNumber;
+                tb_StreetAddress.Text = contact.StreetAddress;
+                tb_PostalCode.Text = contact.PostalCode;
+                tb_City.Text = contact.City;
+            }
+            _isDeleted=false;
         }
+           
 
         private void MenuPresenter(MenuState state)
         {
             switch (state)
             {
                 case MenuState.startup:
+                    Main.Visibility = Visibility.Collapsed;
+                    StartUp.Visibility = Visibility.Visible;
                     break;
 
                 case MenuState.add:
@@ -114,6 +118,8 @@ namespace WpfApp1
                     bt_Edit.Visibility = Visibility.Collapsed;
                     bt_Delete.Visibility = Visibility.Collapsed;
                     bt_Return.Visibility = Visibility.Collapsed;
+                    Main.Visibility = Visibility.Visible;
+                    StartUp.Visibility = Visibility.Collapsed;
                     break;
 
                 case MenuState.edit:
@@ -165,6 +171,7 @@ namespace WpfApp1
             var contact = (Contact)lv_Contacts.SelectedItems[0]!;
 
             _contacts.Remove(contact);
+            _isDeleted = true;
             Save(_filePath, JsonConvert.SerializeObject(_contacts));
             RefreshList();
             ClearFields();
@@ -173,6 +180,22 @@ namespace WpfApp1
         private void bt_Return_Click(object sender, RoutedEventArgs e)
         {
             ClearFields();
+            MenuPresenter(MenuState.add);
+        }
+
+        private void bt_AddFilePath_Click(object sender, RoutedEventArgs e)
+        {
+            _filePath = tb_filePath.Text;
+            try
+            {
+                _contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(Read(_filePath));
+            }
+            catch
+            {
+                using (File.Create(_filePath))
+                    _contacts = new ObservableCollection<Contact>();
+            }
+            RefreshList();
             MenuPresenter(MenuState.add);
         }
     }

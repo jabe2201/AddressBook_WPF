@@ -6,124 +6,139 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Title="ADDRESSBOOK" Height="600" Width="800">
-    <Grid Background="#edeff0">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+    <Grid>
+        <Grid Background="#edeff0" x:Name="Main">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="auto"/>
-            </Grid.RowDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <StackPanel>
-                    <TextBlock Text="FYLL I KONTAKTUPPGIFTER" 
+                <Grid Grid.Row="0">
+                    <StackPanel>
+                        <TextBlock Text="FYLL I KONTAKTUPPGIFTER" 
                                Style="{StaticResource HeaderTextBlock}"
                                Margin="2 68 0 5"
                                />
-                    
-                    <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" />
-                    <TextBox x:Name="tb_FirstName" Style="{StaticResource TextBox}">
-                    <TextBox.Resources>
+
+                        <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" />
+                        <TextBox x:Name="tb_FirstName" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock Text="Efternamn" Style="{StaticResource TextBlock}"/>
+                        <TextBox x:Name="tb_LastName" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock Text="Mail" Style="{StaticResource TextBlock}"/>
+                        <TextBox  x:Name="tb_Email" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock Text="Telefonnummer" Style="{StaticResource TextBlock}"/>
+                        <TextBox  x:Name="tb_PhoneNumber" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock Text="Adress" Style="{StaticResource TextBlock}"/>
+                        <TextBox  x:Name="tb_StreetAddress" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock Text="Postnummer" Style="{StaticResource TextBlock}"/>
+                        <TextBox  x:Name="tb_PostalCode" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                        <TextBlock Text="Ort" Style="{StaticResource TextBlock}"/>
+                        <TextBox  x:Name="tb_City" Style="{StaticResource TextBox}">
+                            <TextBox.Resources>
+                                <Style TargetType="Border">
+                                    <Setter Property="CornerRadius" Value="6"/>
+                                </Style>
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Button x:Name="bt_Add" Click="bt_Add_Click" Content="LÄGG TILL" FontWeight="DemiBold"  Padding="5" Margin="5 10 " HorizontalAlignment="Stretch">
+                        <Button.Resources>
                             <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
+                                <Setter Property="CornerRadius" Value="8"/>
                             </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <TextBlock Text="Efternamn" Style="{StaticResource TextBlock}"/>
-                    <TextBox x:Name="tb_LastName" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <TextBlock Text="Mail" Style="{StaticResource TextBlock}"/>
-                    <TextBox  x:Name="tb_Email" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <TextBlock Text="Telefonnummer" Style="{StaticResource TextBlock}"/>
-                    <TextBox  x:Name="tb_PhoneNumber" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <TextBlock Text="Adress" Style="{StaticResource TextBlock}"/>
-                    <TextBox  x:Name="tb_StreetAddress" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <TextBlock Text="Postnummer" Style="{StaticResource TextBlock}"/>
-                    <TextBox  x:Name="tb_PostalCode" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                    <TextBlock Text="Ort" Style="{StaticResource TextBlock}"/>
-                    <TextBox  x:Name="tb_City" Style="{StaticResource TextBox}">
-                        <TextBox.Resources>
-                            <Style TargetType="Border">
-                                <Setter Property="CornerRadius" Value="6"/>
-                            </Style>
-                        </TextBox.Resources>
-                    </TextBox>
-                </StackPanel>
+                        </Button.Resources>
+                    </Button>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" Foreground="Red" Style="{StaticResource Button_Edit}"/>
+                        <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="&#xE72C;" Foreground="Green" Style="{StaticResource Button_Edit}"/>
+                        <Button x:Name="bt_Return" Click="bt_Return_Click" Content="&#xE72B;" Style="{StaticResource Button_Edit}"/>
+                    </StackPanel>
+                </Grid>
             </Grid>
 
-            <Grid Grid.Row="1">
-                <Button x:Name="bt_Add" Click="bt_Add_Click" Content="LÄGG TILL" FontWeight="DemiBold"  Padding="5" Margin="5 10 " HorizontalAlignment="Stretch">
-                    <Button.Resources>
-                        <Style TargetType="Border">
-                            <Setter Property="CornerRadius" Value="8"/>
-                        </Style>
-                    </Button.Resources>
-                </Button>
-                
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <Button x:Name="bt_Delete" Click="bt_Delete_Click" Content="&#xE74D;" Foreground="Red" Style="{StaticResource Button_Edit}"/>
-                    <Button x:Name="bt_Edit" Click="bt_Edit_Click" Content="&#xE72C;" Foreground="Green" Style="{StaticResource Button_Edit}"/>
-                    <Button x:Name="bt_Return" Click="bt_Return_Click" Content="&#xE72B;" Style="{StaticResource Button_Edit}"/>
-                </StackPanel>
-            </Grid>
-        </Grid>
+            <Grid Grid.Column="1" x:Name="Main2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
 
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0"
+                <TextBlock Grid.Row="0"
                        Text="KONTAKTER"
                        Style="{StaticResource HeaderTextBlock}"
                        Margin="5 0 0 10"
                        VerticalAlignment="Bottom"
             />
 
-            <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5" SelectionChanged="lv_Contacts_SelectionChanged" Style="{StaticResource ListView}">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel>
-                            <TextBlock Text="{Binding FullName}" FontSize="12" FontWeight="Light"/>
-                            <TextBlock Text="{Binding EmailAddress}" FontSize="9" FontWeight="Light"/>
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5" SelectionChanged="lv_Contacts_SelectionChanged" Style="{StaticResource ListView}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock Text="{Binding FullName}" FontSize="12" FontWeight="Light"/>
+                                <TextBlock Text="{Binding EmailAddress}" FontSize="9" FontWeight="Light"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
         </Grid>
+
+        <Grid Background="#edeff0" x:Name="StartUp" Visibility="Collapsed">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Height="auto" Text="VÄNLIGEN FYLL I SÖKVÄG" Margin="0 200 0 3" Padding="3" HorizontalAlignment="Center"/>
+                <TextBox x:Name="tb_filePath" Height="auto" Padding="5" Margin="0 0 0 5" Width="300"/>
+                <Button x:Name="bt_AddFilePath" Click="bt_AddFilePath_Click" Height="auto" Content="&#xE73E;" FontFamily="Segoe MDL2 Assets" FontSize="20" Padding="5" Width="100" HorizontalAlignment="Right"/>
+            </StackPanel>
+        </Grid>
+       
     </Grid>
 </Window>
