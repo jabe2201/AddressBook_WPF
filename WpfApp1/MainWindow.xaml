@@ -15,8 +15,8 @@
 
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="auto"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="62"/>
                 </Grid.RowDefinitions>
 
                 <Grid Grid.Row="0">
@@ -139,6 +139,6 @@
                 <Button x:Name="bt_AddFilePath" Click="bt_AddFilePath_Click" Height="auto" Content="&#xE73E;" FontFamily="Segoe MDL2 Assets" FontSize="20" Padding="5" Width="100" HorizontalAlignment="Right"/>
             </StackPanel>
         </Grid>
-       
+
     </Grid>
 </Window>
