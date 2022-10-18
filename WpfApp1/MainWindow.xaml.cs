@@ -146,8 +146,6 @@ namespace WpfApp1
             _contacts[index].PostalCode = tb_PostalCode.Text;
             _contacts[index].City = tb_City.Text;
             RefreshList();
-            ClearFields();
-            MenuPresenter(MenuState.add);
             Save(_filePath, JsonConvert.SerializeObject(_contacts));
 
         }
@@ -185,7 +183,7 @@ namespace WpfApp1
 
         private void bt_AddFilePath_Click(object sender, RoutedEventArgs e)
         {
-            _filePath = tb_filePath.Text;
+            _filePath = $@"{tb_filePath.Text}\addressbook.json";
             try
             {
                 _contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(Read(_filePath));
@@ -193,10 +191,12 @@ namespace WpfApp1
             catch
             {
                 using (File.Create(_filePath))
-                    _contacts = new ObservableCollection<Contact>();
+                _contacts = new ObservableCollection<Contact>();
             }
             RefreshList();
             MenuPresenter(MenuState.add);
         }
+
+       
     }
 }
