@@ -6,11 +6,11 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Resources/TextBlock.xaml"/>
-                <ResourceDictionary Source="Resources/TextBox.xaml"/>
-                <ResourceDictionary Source="Resources/HeaderTextBlock.xaml"/>
-                <ResourceDictionary Source="Resources/Listview.xaml"/>
-                <ResourceDictionary Source="Resources/ButtonEdit.xaml"/>
+                <ResourceDictionary Source="Resources/TextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/TextBoxDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/HeaderTextBlockDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/ListviewDictionary.xaml"/>
+                <ResourceDictionary Source="Resources/ButtonDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
