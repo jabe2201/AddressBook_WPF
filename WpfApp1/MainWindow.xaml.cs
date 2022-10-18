@@ -39,7 +39,7 @@ namespace WpfApp1
             {
                 if(tb_Email.Text == "")
                 {
-                    MessageBox.Show("Vänligen fyll i en mailadress");
+                    MessageBox.Show("Vänligen fyll i en Mailadress.");
                 }
                 else
                 {
@@ -57,7 +57,7 @@ namespace WpfApp1
             }
             else
             {
-                MessageBox.Show("Vänligen fyll i kontakuppgifter");
+                MessageBox.Show("Finns redan en kontakt med denna Mailadress.");
             }
 
             RefreshList();
@@ -146,6 +146,7 @@ namespace WpfApp1
             _contacts[index].PostalCode = tb_PostalCode.Text;
             _contacts[index].City = tb_City.Text;
             RefreshList();
+            MessageBox.Show("Kontakt uppdaterad.");
             Save(_filePath, JsonConvert.SerializeObject(_contacts));
 
         }
@@ -173,6 +174,7 @@ namespace WpfApp1
             Save(_filePath, JsonConvert.SerializeObject(_contacts));
             RefreshList();
             ClearFields();
+            MessageBox.Show("Kontakt raderad.");
         }
 
         private void bt_Return_Click(object sender, RoutedEventArgs e)
