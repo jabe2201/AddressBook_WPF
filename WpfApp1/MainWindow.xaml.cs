@@ -15,6 +15,7 @@ namespace WpfApp1
     public partial class MainWindow : Window
     {
         private ObservableCollection<Contact> _contacts;
+        private readonly IFileManager _fileManager;
         private string _filePath ="";
         private bool _isDeleted;
 
@@ -25,11 +26,11 @@ namespace WpfApp1
             edit
         }
 
-        public MainWindow()
+        public MainWindow(IFileManager fileManager)
         {
             InitializeComponent();
+            _fileManager = fileManager;
             MenuPresenter(MenuState.startup);
-
         }
 
         private void bt_Add_Click(object sender, RoutedEventArgs e)
