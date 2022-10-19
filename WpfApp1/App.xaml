@@ -14,4 +14,5 @@
         </ResourceDictionary>
     </Application.Resources>
 </Application>
-<!-- Jag lägger här till alla Dictionaries som innehåller min styling som kommer att användas i MainWindow så att Appen vet vartifrån den ska hämta dessa.-->
+<!-- Jag lägger här till alla Dictionaries som innehåller min styling som kommer att användas i MainWindow så att Appen vet vartifrån den ska hämta dessa.
+    Jag har också tagit bort att den ska starta upp appen via sin vanliga väg så att jag kan använda mig av Dependency Injections.-->
