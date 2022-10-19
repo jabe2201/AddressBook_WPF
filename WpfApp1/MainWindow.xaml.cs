@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Windows;
 using System.Windows.Controls;
 using WpfApp1.Models;
+using WpfApp1.Services;
 
 namespace WpfApp1
 {
@@ -62,7 +63,7 @@ namespace WpfApp1
 
             RefreshList();
             ClearFields();
-            Save(_filePath, JsonConvert.SerializeObject(_contacts));
+            _fileManager.Save(_filePath, JsonConvert.SerializeObject(_contacts));
         }
 
         private void ClearFields()
@@ -147,31 +148,17 @@ namespace WpfApp1
             _contacts[index].City = tb_City.Text;
             RefreshList();
             MessageBox.Show("Kontakt uppdaterad.");
-            Save(_filePath, JsonConvert.SerializeObject(_contacts));
+            _fileManager.Save(_filePath, JsonConvert.SerializeObject(_contacts));
 
         }
-        private string Read(string filePath)
-        {
-            using var sr = new StreamReader(filePath);
-            return sr.ReadToEnd();
-        }
-
-        private void Save(string filePath, string content)
-        {
-            var text = Read(filePath);
-            text += content;
-
-            using var sw = new StreamWriter(filePath);
-            sw.WriteLineAsync(content);
-        }
-
+        
         private void bt_Delete_Click(object sender, RoutedEventArgs e)
         {
             var contact = (Contact)lv_Contacts.SelectedItems[0]!;
 
             _contacts.Remove(contact);
             _isDeleted = true;
-            Save(_filePath, JsonConvert.SerializeObject(_contacts));
+            _fileManager.Save(_filePath, JsonConvert.SerializeObject(_contacts));
             RefreshList();
             ClearFields();
             MessageBox.Show("Kontakt raderad.");
@@ -188,7 +175,7 @@ namespace WpfApp1
             _filePath = $@"{tb_filePath.Text}\addressbook.json";
             try
             {
-                _contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(Read(_filePath));
+                _contacts = JsonConvert.DeserializeObject<ObservableCollection<Contact>>(_fileManager.Read(_filePath));
             }
             catch
             {
