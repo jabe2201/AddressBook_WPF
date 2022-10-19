@@ -8,4 +8,7 @@
         <Setter Property="Margin" Value="5 0 5 5"/>
         <Setter Property="FontSize" Value="12"/>
     </Style>
+    <!-- Gemensam Styling för alla TextBoxes. Likt Button och ListView behöver TextBox någon typ av Item- eller ContentPresenter för att kunna
+     presentera den bakomliggande informationen. Jag har tyvärr inte kunnat lösa det och därför inte kunnat lyfta ut det till denna Dictionary.
+     Rundningen av mina TextBoxes finns därför i MainWindow.xaml-koden.-->
 </ResourceDictionary>

@@ -8,4 +8,5 @@
         <Setter Property="Background" Value="#edeff0"/>
         <Setter Property="Margin" Value="5 0 0 5"/>
     </Style>
+    <!-- Gemensam Styling för TextBlocken som presenterar vilken information som ska fyllas i in i kontaktformuläret.-->
 </ResourceDictionary>

@@ -22,6 +22,9 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    <!--Detta är min design för alla mina knappars utseende. Jag använder mig av en ControlTemplate för att kunna runda hörnen på knapparn och 
+    behöver då även en ContentPresenter för att knappens Content ska bli synligt. Jag har också valt att använda en Style.Trigger för att kunna ändra knapparnas utseende när
+    musen är positionerad över dem.-->
 </ResourceDictionary>
 
 

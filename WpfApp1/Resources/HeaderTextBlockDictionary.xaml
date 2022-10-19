@@ -6,4 +6,5 @@
         <Setter Property="FontWeight" Value="DemiBold"/>
         <Setter Property="Foreground" Value="#575a5c"/>
     </Style>
+    <!--Denna Style använder jag till mina rubriker i min applikation-->
 </ResourceDictionary>

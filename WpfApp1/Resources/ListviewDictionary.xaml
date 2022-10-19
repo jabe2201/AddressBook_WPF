@@ -12,5 +12,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!-- Min Style för ListView där mina kontakter visas. Jag har använt ControlTemplate för att kunna runda hörnen och då krävs också en ItemPresenter
+    för att kontakterna ska visas genom Bordern.-->
 </ResourceDictionary>
 
