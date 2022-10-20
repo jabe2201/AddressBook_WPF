@@ -15,6 +15,7 @@ namespace WpfApp1
     public partial class App : Application
     {
         public static IHost? AppHost { get; private set; }
+        
 
         public App()
         {
@@ -23,6 +24,7 @@ namespace WpfApp1
                 {
                     services.AddSingleton<MainWindow>();
                     services.AddSingleton<IFileManager, FileManager>();
+                    /* AddSingelton kör MainWindow och IFileManager en gång och inget mer. Detta eftersom programmet bara behöver startas en gång.*/
                 }).Build();
         }
 
@@ -34,12 +36,14 @@ namespace WpfApp1
             startupWindow.Show();
 
             base.OnStartup(e);
+            /* Eftersom jag har tagit bort programmets vanliga väg att startas så måste jag hör override det som körs när programmet startar.*/
         }
 
         protected override async void OnExit(ExitEventArgs e)
         {
             await AppHost!.StopAsync();
             base.OnExit(e);
+            /* Samma som vid start fast vid avslut.*/
         }
 
     }
