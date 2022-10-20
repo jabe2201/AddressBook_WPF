@@ -7,19 +7,19 @@
         mc:Ignorable="d"
         Title="ADDRESSBOOK" Height="600" Width="800">
     <Grid>
-        <Grid Background="#edeff0" x:Name="Main">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+        <Grid Background="#edeff0" x:Name="Main"> <!-- Namnger denna Grid för att kunna ändra visningsläget i appen-->
+            <Grid.ColumnDefinitions> 
+                <ColumnDefinition Width="*"/> <!-- För Formulär-->
+                <ColumnDefinition Width="*"/> <!-- För att visa adressboken-->
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="62"/>
+                    <RowDefinition/> <!-- För formuläret-->
+                    <RowDefinition Height="62"/> <!-- För knappar-->
                 </Grid.RowDefinitions>
 
-                <Grid Grid.Row="0">
+                <Grid Grid.Row="0"> <!-- Kontaktformulär-->
                     <StackPanel>
                         <TextBlock Text="FYLL I KONTAKTUPPGIFTER" 
                                Style="{StaticResource HeaderTextBlock}"
@@ -27,7 +27,7 @@
                                />
 
                         <TextBlock Text="Förnamn" Style="{StaticResource TextBlock}" />
-                        <TextBox x:Name="tb_FirstName" Style="{StaticResource TextBox}">
+                        <TextBox x:Name="tb_FirstName" Style="{StaticResource TextBox}"> <!-- Blev för samtliga TextBoxes tvungen att lägga rundningen av hörn här. Gick inte att lyfta ut.-->
                             <TextBox.Resources>
                                 <Style TargetType="Border">
                                     <Setter Property="CornerRadius" Value="6"/>
@@ -85,7 +85,7 @@
                     </StackPanel>
                 </Grid>
 
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1"> <!-- Fyra olika knappar med olika funktionalitet men med samma placering och styling-->
                     <Button x:Name="bt_Add" Click="bt_Add_Click" Style="{StaticResource Button_Edit}" Content="&#xE710;"/>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
@@ -96,10 +96,10 @@
                 </Grid>
             </Grid>
 
-            <Grid Grid.Column="1" x:Name="Main2">
+            <Grid Grid.Column="1"> <!-- Visning av adressboken-->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="1*"/> <!-- För rubrik-->
+                    <RowDefinition Height="5*"/> <!-- För att visa kontakter-->
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0"
@@ -107,14 +107,14 @@
                        Style="{StaticResource HeaderTextBlock}"
                        Margin="5 0 0 10"
                        VerticalAlignment="Bottom"
-            />
+                        />
 
                 <ListView Grid.Row="1" x:Name="lv_Contacts" Margin="0 0 5 5" SelectionChanged="lv_Contacts_SelectionChanged" Style="{StaticResource ListView}">
                     <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <StackPanel>
-                                <TextBlock Text="{Binding FullName}" FontSize="12" FontWeight="Light"/>
-                                <TextBlock Text="{Binding EmailAddress}" FontSize="9" FontWeight="Light"/>
+                        <DataTemplate> <!-- ItemTemplate och DataTemplate behövs för att kunna presentera informationen-->
+                            <StackPanel> <!-- Staplar kontakter ovanpå varandra-->
+                                <TextBlock Text="{Binding FullName}" FontSize="12" FontWeight="Light"/> <!-- Kopplad till kontaktens fullständiga namn-->
+                                <TextBlock Text="{Binding EmailAddress}" FontSize="9" FontWeight="Light"/> <!-- Kopllad till kontaktens mail-->
                             </StackPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -122,12 +122,12 @@
             </Grid>
         </Grid>
 
-        <Grid Background="#edeff0" x:Name="StartUp" Visibility="Collapsed">
+        <Grid Background="#edeff0" x:Name="StartUp" Visibility="Collapsed"> <!-- Detta är mitt första visningsläge när appen startar. Denna är Collapsed för att jag ska se min huvuddesign.-->
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center"> 
                 <TextBlock Height="auto" Text="VÄNLIGEN ANGE EN SÖKVÄG" Margin="0 200 0 3" Padding="3" HorizontalAlignment="Center"/>
                 <TextBox x:Name="tb_filePath" Height="auto" Padding="5" Margin="0 0 0 5" Width="300"/>
                 <Button x:Name="bt_AddFilePath" Click="bt_AddFilePath_Click" Style="{StaticResource Button_Edit}" Content="&#xE73E;" HorizontalAlignment="Right"/>
